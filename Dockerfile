@@ -3,12 +3,14 @@
 FROM python:3.11.9-bullseye
 
 ARG OPENAI_API_KEY
+ARG ALLERGY_INSIGHTS_KEY
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
 ENV PYTHONUNBUFFERED 1
 
 ENV OPENAI_API_KEY  $OPENAI_API_KEY
+ENV ALLERGY_INSIGHTS_KEY $ALLERGY_INSIGHTS_KEY
 
 # create root directory for our project in the container
 RUN mkdir /ingredients-api
