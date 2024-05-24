@@ -144,6 +144,9 @@ def get_allergen_data_for_ingredients(ingredient_queries, num_results):
 
 def lookup_detailed_ingredient(ingredient_query, num_results=3):
     # Get the most similar ingredient from the database.
+    # TODO: There's a strange issue with the similarity search where the results are not consistent.
+    #  Sometimes the same query will return different results. Investigate ways to improve consistency:
+    #  https://www.perplexity.ai/search/I-have-a-nhzQcn67QmS7dsHh6IK_7g#0
     search_results = get_ingredient_db().similarity_search_with_score(query=ingredient_query, k=num_results)
     ingredient_lookup_results = [
         get_detailed_ingredient(IngredientLookupResult(extract_ingredient_name(result), float(score))) for result, score in search_results
