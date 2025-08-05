@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // OpenAI API key from environment variable
-const OPENAI_API_KEY = PLACEHOLDER_OPENAI_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 // Path to the input CSV file
 const CSV_FILE_PATH = path.join(__dirname, 'data', 'ingredients.csv');
