@@ -12,4 +12,4 @@ docker pull $image_name:latest
 
 docker run -dit --rm -w /ingredients-api -p 8000:8000 \
   -e OPENAI_API_KEY=$OPENAI_API_KEY \
-  ***REMOVED***.dkr.ecr.us-east-1.amazonaws.com/ingredients-api
+  $image_name
