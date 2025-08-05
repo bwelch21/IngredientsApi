@@ -6,7 +6,7 @@ systemctl start docker
 
 # Set your AWS region and account number
 aws_region="us-east-1"
-aws_account_number="***REMOVED***"
+aws_account_number="${AWS_ACCOUNT_NUMBER}"
 image_name="$aws_account_number.dkr.ecr.$aws_region.amazonaws.com/ingredients-api"
 
 aws ecr get-login-password --region "$aws_region" | docker login --username AWS --password-stdin "$aws_account_number".dkr.ecr."$aws_region".amazonaws.com

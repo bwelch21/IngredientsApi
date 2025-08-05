@@ -2,7 +2,7 @@
 
 # Set your AWS region and account number
 aws_region="us-east-1"
-aws_account_number="***REMOVED***"
+aws_account_number="${AWS_ACCOUNT_NUMBER}"
 
 # Log in to ECR
 aws ecr get-login-password --region "$aws_region" | docker login --username AWS --password-stdin "$aws_account_number".dkr.ecr."$aws_region".amazonaws.com
